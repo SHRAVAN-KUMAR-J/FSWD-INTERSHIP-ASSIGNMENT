@@ -1,0 +1,23 @@
+what is express js?
+express is a minimal flexible node.js framework that is used to built webservices api and backend applications
+
+http server-without express:
+http.createSever((req,res)=>{})
+
+with express
+app.get("/",(req,res)=>{})
+
+
+it is usedd for rest api
+Backend for React/Angular
+Microservices
+Auth systems
+File uploads
+
+Routes decides hoe server response to client 
+
+MIddleware
+
+Basically it is a fuction that runs before the request reaches the Routes
+example:
+loggiing,auth,validation,error handling

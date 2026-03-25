@@ -1,0 +1,9 @@
+{
+  "name": "hello-server",
+  "version": "1.0.0",
+  "description": "Node.js server with multiple routes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

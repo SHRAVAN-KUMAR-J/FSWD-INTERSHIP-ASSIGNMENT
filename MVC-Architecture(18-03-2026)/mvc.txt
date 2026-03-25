@@ -1,0 +1,61 @@
+If i built a stuudent management APP using MVC
+
+what is MVC?
+MVC stands for model view controller.
+It is way to organize the code so that project is clean scalable easy to ddebug ,easy to maintain.
+
+Why MVC Need?
+to avoid bad code structure we need MVC 
+MVC components:
+Model: which handles data.
+ex:
+fetching data
+storing student details
+updating database
+
+it works with:
+database,array,files,external API's  
+ model=data layer
+ =======================================
+ view- handle what user sees
+ in froontend apps
+ ex:
+ html pages
+ react UI 
+
+ In api projects?
+
+
+
+ controller-Acts as middle person between model and view
+
+ it
+ receives request
+ call model
+ process logic
+ sends response
+
+
+ controller-Brain/request handler
+ ==============================================
+ MVC Flow:
+ suppose user hits:GET/students
+
+ 1.request comes to route
+ 2.route calls controller
+ 3.controller as model for data
+ 4.model return data
+ 5.view in view layer
+======================================================
+Error Handling
+
+When something goes wrong the app should not crash badly
+ex:
+student not found ,miissing data ,invalid input,server issue.
+
+without error handling server may crash,confusing message may come,debugging become handler
+types of error in NODE?EXPRESS
+1.Syntax error
+2.Runtime error
+3.Logical error
+4.custom application error

@@ -1,0 +1,24 @@
+what is statemanagement?
+state=data that changes over time and affects the UI
+type of state?
+Local state: Inside One component 
+Lifted state:shared between siblings
+global state: entire app 
+
+
+global state:
+
+
+what is context
+
+provider: the data source
+provider is a coomponent that wrps your app and supplies global data to all the children.it acts like a central storage
+
+
+Recomended professional folder structure:
+component/-reusable UI
+pages/- route level compponent
+services/- ApI calls
+context/- global state
+hooks/- customer hooks
+utils/- helper function

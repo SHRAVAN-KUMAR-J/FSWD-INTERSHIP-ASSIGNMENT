@@ -1,0 +1,508 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* App Container - Full Screen */
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.5s ease;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Header - Fixed at top */
+.app-header {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.header-content h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #2d3748;
+  margin-bottom: 0.25rem;
+}
+
+.header-content p {
+  color: #718096;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Main Content - Takes remaining height */
+.app-main {
+  flex: 1;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.main-grid {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  height: 100%;
+}
+
+/* Left Section - Current Mood */
+.current-mood-section {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mood-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid;
+  width: 100%;
+  max-width: 450px;
+  transition: all 0.3s ease;
+}
+
+.mood-emoji-display {
+  font-size: clamp(5rem, 15vw, 8rem);
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.mood-name {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.mood-label-text {
+  text-align: center;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+/* Stats */
+.mood-stats {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1.2;
+}
+
+.stat-text {
+  display: block;
+  color: #718096;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Right Section */
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+/* Cards */
+.controls-card,
+.history-card,
+.tips-card {
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.controls-card:hover,
+.history-card:hover,
+.tips-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #2d3748;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.section-heading span {
+  font-size: 1.4rem;
+}
+
+/* Mood Buttons Grid */
+.mood-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.mood-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.mood-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mood-btn.active {
+  border-width: 2px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8);
+}
+
+.btn-emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* History List */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.history-item {
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.history-item:hover {
+  background: #edf2f7;
+  transform: translateX(5px);
+}
+
+.history-item-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.history-emoji {
+  font-size: 1.3rem;
+  min-width: 2rem;
+}
+
+.history-mood {
+  font-weight: 500;
+  color: #2d3748;
+  min-width: 70px;
+}
+
+.history-time {
+  color: #718096;
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+/* Tips List */
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tips-list p {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #4a5568;
+  padding: 0.75rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+/* Desktop Large */
+@media (min-width: 1200px) {
+  .app-main {
+    padding: 3rem;
+  }
+  
+  .mood-card {
+    padding: 3rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .app-main {
+    padding: 2rem;
+  }
+  
+  .mood-buttons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .app-main {
+    padding: 1.5rem;
+  }
+  
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .current-mood-section {
+    order: 1;
+  }
+  
+  .controls-section {
+    order: 2;
+  }
+  
+  .mood-card {
+    max-width: 100%;
+  }
+  
+  .mood-buttons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Landscape */
+@media (min-width: 576px) and (max-width: 767px) {
+  .app-main {
+    padding: 1rem;
+  }
+  
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .header-content {
+    padding: 0.75rem 1rem;
+  }
+  
+  .mood-buttons-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .mood-btn {
+    padding: 0.75rem;
+  }
+  
+  .btn-emoji {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 575px) {
+  .app-main {
+    padding: 0.75rem;
+  }
+  
+  .header-content {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .mood-card {
+    padding: 1.5rem;
+  }
+  
+  .mood-emoji-display {
+    font-size: 4rem;
+  }
+  
+  .mood-name {
+    font-size: 1.8rem;
+  }
+  
+  .mood-stats {
+    padding-top: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.3rem;
+  }
+  
+  .mood-buttons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .mood-btn {
+    padding: 0.6rem;
+  }
+  
+  .btn-emoji {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .btn-label {
+    font-size: 0.75rem;
+  }
+  
+  .history-item-content {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .history-mood {
+    min-width: auto;
+  }
+  
+  .history-time {
+    width: 100%;
+    margin-left: 2.5rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 375px) {
+  .mood-buttons-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mood-btn {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .btn-emoji {
+    margin-bottom: 0;
+  }
+  
+  .history-item-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .history-time {
+    margin-left: 0;
+    width: auto;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .mood-btn:hover {
+    transform: none;
+  }
+  
+  .mood-btn:active {
+    transform: scale(0.98);
+  }
+  
+  .history-item:hover {
+    transform: none;
+  }
+}
+
+/* Landscape Mode */
+@media (orientation: landscape) and (max-height: 600px) {
+  .app-header {
+    position: relative;
+  }
+  
+  .mood-emoji-display {
+    font-size: 3rem;
+  }
+  
+  .mood-card {
+    padding: 1rem;
+  }
+  
+  .mood-stats {
+    padding-top: 0.5rem;
+  }
+}

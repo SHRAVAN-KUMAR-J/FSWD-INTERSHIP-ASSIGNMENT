@@ -1,0 +1,30 @@
+API?
+Application Programming Interface
+
+What is rest api?
+
+REST=representational state transfer
+it allows communication between:
+frontend<->Backend
+App<->Server
+
+
+http methods -core rest api's  
+GET-Feton data -get all users
+POST- create data
+PUT-To UPdate the users (existing)
+DELETE-remove the data
+
+
+Why status code
+200-sucess
+204-created
+400-bad request
+404-not found
+
+what is postman?
+A postman is a tool or application is used to test api without any frontend code.
+postman  is like a waiter.
+
+What is patch method?
+Used to partially update existing data in a resource.

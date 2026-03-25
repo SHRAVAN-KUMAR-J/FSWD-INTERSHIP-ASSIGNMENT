@@ -1,0 +1,20 @@
+what is multipage naviation in spa?
+Traditional
+1.browser sends request to server
+2.server sends new html page
+3.entire page reloads
+ex:
+/about -loads the entire html page
+
+SPA:
+built using react,angulae,vue.js
+what happens:
+.only one html file
+.content changes dynamically
+.reloads automaticaally
+.dynamical UI/UX
+
+
+
+Routing:
+hadled by react router

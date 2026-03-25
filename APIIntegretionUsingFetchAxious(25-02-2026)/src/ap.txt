@@ -1,0 +1,45 @@
+What is api?
+Application programming interface:It allow frondend to talk to backend or server.
+
+Example:
+Instagram app called api. this api get the port from the api.
+then UI is displayed on the screen.
+
+How the api integration is done using fetch?
+
+Fetch api:It is a built in javascript function that is used to make http request from the user.
+It allow the frontend to get data using get method also we can send data using send method,and put mehod and also delete.
+get data(GET)
+send data(POST)
+update data(PUT)
+delete data(DELETE)
+
+How it work internally?
+step1: browser send the http request.
+step2: server process the request
+step3: server send json response.
+step4: response.json converts it .
+step5: data is stored in state.
+
+
+JSON: JavaScript object notation.
+Always stored in the form of key-value pair.
+it is also used in the server function.
+
+
+axios:
+third party  http libarry used to make api requests.
+install it:
+npm install axios
+
+why it is popular?
+
+-Automatically convert into json
+-better for error handling
+-it support interceptors
+-it support request cancellation.
+
+when to use :
+fetch->small project
+axious->which is used for large production app.
+        -which automate the server fuction.

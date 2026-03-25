@@ -1,0 +1,58 @@
+/* Element Selector: Styles all <body> elements */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Class Selector: Styles elements with class="container" */
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ID Selector: Styles element with id="heading" */
+#heading {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Group Selector: Styles multiple elements at once (e.g., all paragraphs and links) */
+p, a {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+/* Class Selector for button-like styling */
+.button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover Pseudo-Class Selector: Changes on hover */
+.button:hover {
+    background-color: #218838;
+}
