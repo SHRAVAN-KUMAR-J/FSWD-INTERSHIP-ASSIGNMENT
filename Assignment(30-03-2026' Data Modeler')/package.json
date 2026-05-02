@@ -1,0 +1,28 @@
+{
+  "name": "blogging-platform-schema",
+  "version": "1.0.0",
+  "description": "MongoDB schema design for blogging platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "validate": "node validate-schema.js",
+    "dev-no-db": "cross-env SKIP_MONGODB=true nodemon server.js"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "blogging",
+    "schema"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "nodemon": "^3.0.0"
+  }
+}

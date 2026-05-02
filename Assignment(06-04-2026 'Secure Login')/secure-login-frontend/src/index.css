@@ -1,0 +1,51 @@
+.auth-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  background: white;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-container button:hover {
+  background: #0052cc;
+}
+
+.error {
+  color: red;
+  margin: 10px 0;
+}
+
+.dashboard {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.logout-btn {
+  background: #ff4444;
+  padding: 12px 30px;
+  font-size: 16px;
+}
