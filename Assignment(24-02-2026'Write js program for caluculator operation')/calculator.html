@@ -4,6 +4,7 @@
     <title>Console Calculator</title>
 </head>
 <body>
+<div id="result"></div>
 
 <script>
 let num1 = Number(prompt("Enter first number:"));
@@ -29,6 +30,7 @@ if (operator === "+") {
 }
 
 console.log("Result:", result);
+document.getElementById("result").innerHTML = "Result: " + result;
 </script>
 
 </body>

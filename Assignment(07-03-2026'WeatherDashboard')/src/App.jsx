@@ -76,7 +76,7 @@ function App() {
       const { latitude, longitude, name, country } = geoData.results[0];
 
       const weatherResponse = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&relativehumidity_2m=true&timezone=auto`
+        `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=relativehumidity_2m&timezone=auto`
       );
 
       if (!weatherResponse.ok) {
@@ -122,6 +122,13 @@ function App() {
       };
 
       const currentWeather = weatherJson.current_weather;
+      const humidityIndex = weatherJson.hourly?.time?.findIndex(
+        (time) => time === currentWeather.time
+      );
+      const humidity = humidityIndex >= 0
+        ? weatherJson.hourly.relativehumidity_2m[humidityIndex]
+        : weatherJson.hourly?.relativehumidity_2m?.[0] ?? '--';
+
       const weatherInfo = weatherCodeMap[currentWeather.weathercode] || 
                          { desc: 'Unknown', emoji: '🌡️' };
 
@@ -130,7 +137,7 @@ function App() {
         country: country,
         temperature: currentWeather.temperature,
         windspeed: currentWeather.windspeed,
-        humidity: weatherJson.current_weather.relativehumidity_2m || '--',
+        humidity,
         description: weatherInfo.desc,
         emoji: weatherInfo.emoji,
         lat: latitude,
